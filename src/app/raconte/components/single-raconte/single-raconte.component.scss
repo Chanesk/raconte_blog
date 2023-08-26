@@ -1,0 +1,88 @@
+@import '../../../../styles.scss';
+.single{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 60px 0px 100px 0px;
+        @include breakpoint(tablette){
+            margin: 40px 80px;
+        }
+        @include breakpoint(mobil){
+            margin: 20px;
+        }
+    &__page{
+        width: 800px;
+        @include breakpoint(tablette){
+            width: 100%;
+            margin: 0px 80px;
+        }
+    }
+    
+    &__info{
+        &>p{
+            @include body;
+            font-weight: 700;
+            @include breakpoint(mobil){
+                font-size: $size-bodymob;
+            }
+        }
+        &__user{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            &__img>img{
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                @include breakpoint(mobil){
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+            &__text{
+                @include body;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                @include breakpoint(mobil){
+                    font-size: $size-bodymob;
+                    gap: 2px;
+                }
+                &>p{
+                    margin: 0px;
+                }
+            }
+        }
+    }
+    &__raconte{
+        &>h1{
+            margin: 20px 0px 40px 0px;
+            @include heading;
+            @include breakpoint(mobil){
+                font-size: $size-headres;
+                margin: 10px 0px 20px 0px;
+            }
+        }
+        &__img>img{
+            width: 800px;
+            height: 480px;
+            object-fit: cover;
+            @include breakpoint(tablette){
+                width: 100%;
+            }
+            @include breakpoint(mobil){
+                height: 240px;
+            }
+        }
+        &>p{
+            @include body;
+            width: 800px;
+            @include breakpoint(tablette){
+                width: 100%;
+            }
+            @include breakpoint(mobil){
+                font-size: $size-bodymob;
+            }
+        }
+    }
+}

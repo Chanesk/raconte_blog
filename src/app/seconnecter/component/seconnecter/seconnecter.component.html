@@ -1,0 +1,32 @@
+<div class="connect">
+    <div class="connect__content">
+        <div class="connect__content__img">
+            <a routerLink="">
+                <img src="../../../../assets/images/Raconte-fotor-20230810173821-removebg-preview.png" alt="raconte logo">
+            </a>
+        </div>
+            <form class="connect__content__form" [formGroup]="raconteForm">
+                <h3>Bienvenue</h3>
+                <div class="connect__content__box">
+                    <input type="text" placeholder="Entrez votre nom" formControlName="username">
+                </div>
+                <span *ngIf="raconteForm.controls['username'].invalid && raconteForm.controls['username'].touched">Veuillez entrez un nom qui contient au moins 3 caractères</span>                
+                <div class="connect__content__box">
+                    <input type="email" placeholder="Entrez votre email" formControlName="email">
+                </div>
+                <span *ngIf="raconteForm.controls['email'].invalid && raconteForm.controls['email'].touched">Veuillez entrez une adresse valide</span>
+                <div class="connect__content__box">
+                    <input type="password" placeholder="Entrez votre mot de passe" formControlName="password">
+                </div>
+                <span *ngIf="raconteForm.controls['password'].invalid && raconteForm.controls['password'].touched"> veuillez entrez au minimum huit caractères, au moins une lettre majuscule, une lettre minuscule et un chiffre</span>
+                <button type="submit" (click)="onSubmitUser()"[disabled]="raconteForm.invalid">Se connecter</button>
+            </form>
+    </div>
+    <div class="connect__cover">
+        <div class="connect__cover__box">
+            <h1>Découvrez un espace pour partager vos récits d'aventures passionnantes et explorer les recoins les plus sombres de votre imagination.</h1>
+            <p class="connect__cover__box__text">Agnès KABANGA</p>
+            <p class="connect__cover__box__p">Developpeuse web</p>
+        </div>
+    </div>
+</div>

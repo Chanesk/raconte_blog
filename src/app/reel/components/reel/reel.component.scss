@@ -1,0 +1,23 @@
+@import '../../../../styles.scss';
+.reel{
+    margin: 0px 80px;
+    @include breakpoint(mobil){
+        margin: 0px 20px;
+    }
+    &__heading>h1{
+        @include text;
+    }
+    &__article{
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 100px 0px;
+        @include breakpoint(tablette){
+            gap: 40px;
+            margin: 40px 0px 60px 0px;
+        }
+
+    }
+}

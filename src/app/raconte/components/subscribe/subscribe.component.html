@@ -1,0 +1,10 @@
+<div class="subscribe" *ngIf="sub === null">
+  <p class="subscribe__text">
+    Ne manquez aucune mise à jour ! Abonnez-vous à notre newsletter pour
+    recevoir les dernières nouvelles
+  </p>
+  <form class="subscribe__form" [formGroup]="subForm">
+    <input type="email" placeholder="Entrez votre email" formControlName="email"/>
+    <button (click)="onSub()">Souscrivez</button>
+  </form>
+</div>

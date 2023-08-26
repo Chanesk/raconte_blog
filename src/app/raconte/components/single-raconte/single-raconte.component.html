@@ -1,0 +1,22 @@
+<div *ngIf="racontes as raconte" class="single">
+    <div class="single__page">
+        <div class="single__info">
+            <p>Histoires reserver aux membres</p>
+            <div class="single__info__user">
+                <div class="single__info__user__img">
+                    <img [src]="raconte.user.imgUrl" alt="">
+                </div>
+                <div class="single__info__user__text">
+                    <p>{{raconte.user.name}}</p>
+                    <p>Publié le {{raconte.createdDate | date: 'd MMMM yyyy'}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="single__raconte">
+            <h1>{{raconte.title}}</h1>
+            <div class="single__raconte__img"><img [src]="raconte.image" alt="raconte.title"></div>
+            <p>{{raconte.content}}</p>
+        </div>
+
+    </div>
+</div>

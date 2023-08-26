@@ -1,0 +1,109 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&family=Inconsolata&family=Lato&family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Lato&family=Open+Sans&family=Quicksand&display=swap');
+
+* {
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+body{
+    margin: 0 ;
+    padding: 0;
+}
+
+$color-primary:#292727;
+$color-secondary:#141E27;
+$color-grey: #EEEDDE;
+$color-white:#fff;
+$color-another:#203239;
+$size-heading: 40px;
+$size-headres:28px;
+$size-headmob:20px;
+$size-title:22px;
+$size-body:16px;
+$size-bodymob: 12px;
+$size-cta:20px;
+$size-link:20px;
+$size-subtitle:14px;
+$size-linkmobile: 18px;
+$typographie:'Antic Didone',Arial, Helvetica, serif;
+$typo-sec:'Open Sans', Arial, Helvetica, sans-serif;
+$tablette: 930px;
+$mobil:600px;
+
+@mixin heading($size:$size-heading, $font:$typographie, $color:$color-primary){
+    font-size: $size;
+    font-family: $font;
+    color: $color;
+}
+@mixin title($size: $size-title, $font:$typographie, $color:$color-primary){
+    font-size: $size;
+    font-family: $font;
+}
+@mixin cta($size:$size-cta, $font:$typo-sec, $color:$color-primary){
+    font-size: $size;
+    font-family: $font;
+    font-weight: 700;
+}
+@mixin body($size:$size-body, $font:$typo-sec, $color:$color-primary){
+    font-size: $size;
+    font-family: $font;
+    color: $color;
+}
+@mixin link($size:$size-link, $font:$typographie, $color:$color-primary){
+    font-size: $size;
+    font-family: $font;
+    color: $color;
+}
+@mixin subtitle($size:$size-subtitle, $font:$typo-sec, $color:$color-primary){
+    font-size: $size;
+    font-family: $font;
+}
+@mixin button($color:$color-white){
+    @include cta;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background: $color;
+}
+
+@mixin breakpoint($point){
+    @if $point == tablette{
+        @media (max-width: $tablette){
+            @content
+        }
+    }
+    @else if $point == mobil{
+        @media (max-width: $mobil){
+            @content
+        }
+    }
+}
+
+@mixin text(){
+    @include heading;
+    text-align: center;
+    margin: 48px 0px 20px 0px;
+    @include breakpoint(tablette){
+        font-size: $size-headres;
+    }
+    @include breakpoint(mobil){
+        font-size: $size-headmob;
+        margin: 40px 0px 20px 0px;
+    }   
+}
+
+@mixin buttonCat(){
+    border: 1px solid $color-secondary;
+    border-radius: 20px;
+    background-color: $color-white;
+    @include subtitle;
+    width: 74px;
+    text-align: center;
+    padding: 4px 8px;
+    font-weight: 700;
+    @include breakpoint(mobil){
+        font-size: $size-bodymob;
+        padding: 4px 6px;
+    }
+}

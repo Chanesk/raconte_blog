@@ -1,0 +1,79 @@
+@import "../../../../styles.scss";
+.subscribe {
+  &__text {
+    @include body;
+    text-align: center;
+    @include breakpoint(mobil) {
+      font-size: $size-bodymob;
+      margin-bottom: 16px;
+    }
+  }
+  &__form {
+    display: flex;
+    justify-content: center;
+    @include breakpoint(tablette) {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    & > input {
+      padding: 20px 20px;
+      border: 1px solid $color-secondary;
+      width: 400px;
+      border-radius: 10px;
+      @include body;
+      margin-left: 100px;
+      @include breakpoint(tablette) {
+        margin-left: 0px;
+        padding: 10px;
+        width: 320px;
+      }
+      @include breakpoint(mobil) {
+        width: 280px;
+        font-size: $size-bodymob;
+      }
+    }
+    & > button {
+      @include button;
+      background-color: $color-secondary;
+      height: 44px;
+      position: relative;
+      right: 140px;
+      top: 10px;
+      color: white;
+      border: none;
+      @include breakpoint(tablette) {
+        position: inherit;
+        width: 320px;
+      }
+      @include breakpoint(mobil) {
+        width: 280px;
+        font-size: $size-linkmobile;
+      }
+      &:hover {
+        @include button($color: $color-another);
+        color: $color-white;
+        border: none;
+        transition: transform 0.5s ease;
+        transform: scale(1);
+        box-shadow: inset 0 0 0 1px $color-secondary;
+      }
+      &::after {
+        @include button($color: $color-another);
+        box-shadow: inset 0 0 0 1px $color-secondary;
+      }
+      &::before {
+        @include button($color: $color-another);
+        box-shadow: inset 0 0 0 80px $color-secondary;
+      }
+      &:hover::before {
+        box-shadow: inset 0 0 0 1px $color-secondary;
+      }
+    }
+  }
+}
+span {
+  color: red;
+  @include subtitle($size: 12px);
+  width: 300px;
+}

@@ -1,0 +1,100 @@
+@import '../../../../styles.scss';
+.connect{
+    display: flex;
+    height: 100vh;
+    @include breakpoint(mobil){
+        display: block;
+        margin: 0px 20px;
+    }
+    &__content{
+        width: 50%;
+        height: 100vh;
+        @include breakpoint(mobil){
+            width: 100%;
+        }
+        &__img{
+            padding-left: 60px;
+            height: 10%;
+            margin-top: 20px;
+            @include breakpoint(mobil){
+                padding-left: 0px;
+            }
+        &>a>img{
+                height: 32px;
+                width: 180px;
+                object-fit: cover;
+            }
+        }
+
+        &__form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 90%;
+            padding-bottom: 80px;
+            &>h3{
+                @include title($size:24px, $color:$color-secondary);
+                margin-bottom: 30px;
+            }
+            &>button{
+                @include button($color:$color-secondary);
+                border: none;
+                color: $color-white;
+                width: 300px;
+                padding: 10px;
+                margin-top: 20px;
+            }
+            &>span{
+                color: red;
+                @include subtitle($size:12px);
+                width: 300px;
+            }
+        }
+        &__box{
+            margin-bottom: 20px;
+            &>input{
+                border: none ;
+                outline: none;
+                border-bottom: 0.6px solid $color-secondary;
+                width: 300px;
+                height: 40px;
+                @include body;
+            }
+        }
+    }
+    &__cover{
+        width: 50%;
+        background: url("../../../../assets/images/cover.jpg")no-repeat;
+        background-size: cover;
+        height: 100vh;
+        @include breakpoint(mobil){
+            display: none;
+        }
+        &__box{
+            background-color: rgba(0,0,0,.6);
+            height: 100%;
+            margin: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            padding: 0px 80px 0px 20px;
+            color: $color-white;
+            &>h1{
+                @include title;
+                font-weight: 400;
+                margin-bottom: 32px
+            }
+            &__text{
+                @include cta;
+                margin: 0px;
+            }
+            &__p{
+                @include body;
+                color: $color-white;
+                margin:10px 0px 20px 0px;
+            }
+        }
+
+    }
+}

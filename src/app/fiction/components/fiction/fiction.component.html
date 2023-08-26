@@ -1,0 +1,10 @@
+<div class="fiction">
+    <section class="fiction__heading">
+        <h1>Imagination Débordante: Un rendez-vous avec l'inattendu</h1>
+        <app-subscribe></app-subscribe>
+    </section>
+    <section class="fiction__article">
+        <app-fiction-article *ngFor="let raconte of racontes" [raconte]="raconte"></app-fiction-article>
+    </section>
+</div>
+

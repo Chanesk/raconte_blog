@@ -1,0 +1,32 @@
+@import '../../styles.scss';
+.landing{
+    padding: 0px 80px;
+    @include breakpoint(mobil){
+        padding: 0px 20px;
+    }
+    &__cover{
+        margin-bottom: 100px;
+        &__title{
+            @include text;
+        }
+        @include breakpoint(mobil){
+            margin-bottom: 60px;
+        }
+
+    }
+    &__article{
+        margin-bottom: 100px;
+        @include breakpoint(mobil){
+            margin-bottom: 60px;
+        }
+        &>p{
+            @include cta;
+            @include breakpoint(tablette){
+                font-size:$size-linkmobile
+            }
+            @include breakpoint(mobil){
+                font-size: $size-body;
+            }
+        }
+    }
+}

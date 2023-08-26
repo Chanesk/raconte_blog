@@ -1,0 +1,127 @@
+@import '../../../../styles.scss';
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px 20px 70px;
+  @include breakpoint(tablette){
+    display: block;
+  }
+  @include breakpoint(mobil){
+    padding: 20px;
+  }
+    & > a>img {
+      height: 32px;
+      width: 180px;
+      object-fit: cover;
+      @include breakpoint(tablette){
+        position: absolute;
+        left: 60px;
+        top: 20px;
+        width: 160px;
+      }
+      @include breakpoint(mobil){
+        left: 4px;
+        width: 140px;
+      }
+  }
+  &__icon{
+    display: none;
+    font-size: 28px;
+    margin-bottom: 8Px;
+    color: $color-primary;
+    cursor: pointer;
+    @include breakpoint(tablette){
+        display: block;
+        float: right;
+        position: absolute;
+        right:80px;
+        top: 13px;
+    }
+    @include breakpoint(mobil){
+      right: 20px;
+    }
+  }
+}
+.navigation {
+  display: flex;
+  align-items: center;
+  @include breakpoint(tablette){
+    display: none;
+  }
+  &__list {
+    display: flex;
+    &__element {
+      list-style-type: none;
+      margin-right: 32px;
+      & > a {
+        text-decoration: none;
+        @include link;
+      }
+    }
+  }
+  &__btn{
+    @include button;
+    border: 1px solid $color-secondary;
+    margin-left:32px;
+    color: $color-primary;
+    cursor: pointer;
+    &:hover{
+        @include button($color:$color-secondary);
+        color:$color-white;
+        border: none;
+        transition: transform 0.5s ease;
+        transform: scale(1);
+        box-shadow: inset 0 0 0 1px $color-secondary;
+    }
+    &::after{
+        @include button($color:$color-secondary);
+        box-shadow: inset 0 0 0 1px $color-secondary;
+    }
+    &::before{
+        @include button($color:$color-secondary);
+        box-shadow: inset 0 0 0 80px $color-secondary;
+    }
+  &:hover::before{
+    box-shadow: inset 0 0 0 1px $color-secondary;
+  }
+  }
+  &__responsive{
+    margin-top:40px;
+    display: none;
+    @include breakpoint(tablette){
+      display: block;
+      margin-left: 20px;
+    }
+    @include breakpoint(mobil){
+      margin-left: 4px;
+    }
+    &__list{
+      padding: 0;
+      &__element{
+          list-style-type: none;
+          margin-bottom: 10px;
+          &>a{
+              text-decoration: none;
+              @include link;
+              @include breakpoint(mobil){
+                @include link($size:$size-linkmobile);
+              }
+          }
+      }
+    }
+    &__btn{
+        @extend .navigation__btn;
+        margin: 0px;
+        @include breakpoint(mobil){
+          @include cta($size:$size-body);
+          padding: 8px 10px;
+        }
+    }
+  }
+}
+.active{
+  border-bottom: 1px solid $color-secondary;
+  font-weight: 700;
+  padding-bottom: 8px;
+}

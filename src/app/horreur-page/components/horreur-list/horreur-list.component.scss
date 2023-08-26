@@ -1,0 +1,23 @@
+@import '../../../../styles.scss';
+.horreur{
+    margin: 0px 80px 100px 80px;
+    @include breakpoint(mobil){
+        margin: 0px 20px 60px 20px;
+    }
+    &__heading{
+        margin-bottom: 100px;
+        @include breakpoint(mobil){
+            margin-bottom: 60px;
+        }
+        &>h1{
+        @include text;
+    }
+    }
+    &__article{
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}

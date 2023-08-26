@@ -1,0 +1,67 @@
+<header class="header" *ngIf="(current$ | async) !== '/seconnecter'">
+  <a routerLink="">
+    <img
+      src="../../../../assets/images/Raconte-fotor-20230810173821-removebg-preview.png"
+      alt="raconte-logo"
+    />
+  </a>
+  <nav class="navigation">
+    <ul class="navigation__list">
+      <li class="navigation__list__element">
+        <a
+          routerLink=""
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLinkActive="active"
+          >Accueil</a
+        >
+      </li>
+      <li class="navigation__list__element">
+        <a routerLink="horreur" routerLinkActive="active">Horreur</a>
+      </li>
+      <li class="navigation__list__element">
+        <a routerLink="fiction" routerLinkActive="active">Fiction</a>
+      </li>
+      <li class="navigation__list__element">
+        <a routerLink="reel" routerLinkActive="active">Réel</a>
+      </li>
+    </ul>
+    <button
+      *ngIf="token === null"
+      class="navigation__btn"
+      (click)="onSeconnecter()"
+    >
+      Se connecter
+    </button>
+  </nav>
+  <fa-icon
+    [icon]="icon"
+    class="header__icon"
+    (click)="toggleDisplayNav()"
+    *ngIf="isShowNav === true"
+  ></fa-icon>
+  <fa-icon
+    [icon]="faXmark"
+    class="header__icon"
+    (click)="toggleDisplayNav()"
+    *ngIf="isShowNav === false"
+  ></fa-icon>
+  <nav class="navigation__responsive" *ngIf="isShowNav === false">
+    <ul class="navigation__responsive__list">
+      <li class="navigation__responsive__list__element">
+        <a routerLink="">Accueil</a>
+      </li>
+      <li class="navigation__responsive__list__element">
+        <a routerLink="horreur">Horreur</a>
+      </li>
+      <li class="navigation__responsive__list__element">
+        <a routerLink="fiction">Fiction</a>
+      </li>
+      <li class="navigation__responsive__list__element">
+        <a routerLink="reel">Réel</a>
+      </li>
+    </ul>
+    <button *ngIf="token === null" class="navigation__responsive__btn" (click)="onSeconnecter()">
+      Se connecter
+    </button>
+  </nav>
+</header>

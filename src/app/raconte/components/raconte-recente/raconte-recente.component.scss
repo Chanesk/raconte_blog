@@ -1,0 +1,63 @@
+@import '../../../../styles.scss';
+.article{
+    width: 100%;
+    cursor: pointer;
+    &__img>img{
+    height: 360px;
+    width: 100%;
+    object-fit: cover;
+    @include breakpoint(mobil){
+        height: 200px;
+    }
+    }
+    &__info{
+        @include body;
+        margin: 10px 0px 0px 0px;
+        @include breakpoint(mobil){
+            font-size: $size-subtitle;
+        }
+    }
+    &__content{
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        gap: 30px;
+        margin-top: 20px;
+        @include breakpoint(mobil){
+            gap: 20px;
+            margin-top: 10px;
+        }
+        &__text{
+            width: 95%;
+            &>h3{
+                margin: 0px;
+                @include link;
+                @include breakpoint(mobil){
+                    font-size: $size-body;
+                }
+            }
+            &>p{
+                @include body;
+                margin-top: 10px;
+                @include breakpoint(mobil){
+                    font-size: $size-bodymob;
+                    margin-top: 8px;
+                }
+            }
+            &>div{
+                @include buttonCat;
+            }
+        }
+        &__icon{
+            width: 5%;
+            &__arrow{
+                font-size: 22px;
+                margin-left: 10px;
+                @include breakpoint(mobil){
+                    margin-left: 0px;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}

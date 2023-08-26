@@ -1,0 +1,16 @@
+<div class="article" *ngIf="raconte.category.name === 'fiction'" (click)="onViewRaconte()">
+    <div class="article__img">
+        <img [src]="raconte.image" alt="">
+    </div>
+    <p class="article__info">{{raconte.user.name}} - {{raconte.createdDate | date: 'd MMMM yyyy'}}</p>
+    <div class="article__content">
+        <div class="article__content__text">
+            <h3>{{raconte.title| truncate:[36]}}</h3>
+            <p >{{raconte.content | truncate:[150]}}</p>
+            <div>{{raconte.category.name}}</div>
+        </div>
+        <div class="article__content__icon">
+           <fa-icon [icon]="icon" class="article__content__icon__arrow"></fa-icon> 
+        </div>
+    </div>
+</div>
