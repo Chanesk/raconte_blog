@@ -24,9 +24,7 @@ export class SubscribeComponent implements OnInit{
   }
   onSub(){
     this.tokenService.saveSub('mon email')
-    this.sub = this.tokenService.getSub();
-    console.log("salut");
-    
+    this.sub = this.tokenService.getSub();    
 
   }
 
