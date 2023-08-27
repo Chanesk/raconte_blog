@@ -14,8 +14,11 @@
         gap: 40px;
         margin: 100px 0px;
         flex-wrap: wrap;
+        @include breakpoint(tablette){
+        gap: 40px 0px;  
+        }
         @include breakpoint(mobil){
-            gap: 20px;
+            gap: 20px 0;
             margin: 60px 0px;
         }
     }
