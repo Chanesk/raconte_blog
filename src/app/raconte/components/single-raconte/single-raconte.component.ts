@@ -10,12 +10,13 @@ import { raconteService } from 'src/app/core/service/racontes.service';
   styleUrls: ['./single-raconte.component.scss']
 })
 export class SingleRaconteComponent implements OnInit{
-  racontes!:Raconte;
+  racontes$!:Observable<Raconte>;
   constructor(private raconteService: raconteService,
               private route: ActivatedRoute){}
   ngOnInit(): void {
-    const raconteId= +this.route.snapshot.params['id'];
-    this.racontes=this.raconteService.getRaconteById(raconteId)     
+    const raconteId= this.route.snapshot.params['id'];
+    console.log(raconteId);
+    this.racontes$=this.raconteService.getRaconteById(raconteId)     
     
   }
 

@@ -9,15 +9,17 @@ import { raconteService } from 'src/app/core/service/racontes.service';
   styleUrls: ['./raconte-recente-list.component.scss']
 })
 export class RaconteRecenteListComponent implements OnInit{
-  racontes!: Raconte[];
-  firstRecente!: Raconte;
-  secondRecente!: Raconte[]
+  racontes$!:Observable<Raconte[]>;
+  firstRecente$!: Observable<Raconte>;
+  secondRecente$!: Observable<Raconte[]>
   constructor(private raconteService: raconteService){}
 
   ngOnInit(): void {
-    this.racontes = this.raconteService.getAllRaconte().slice(-4)
-    this.firstRecente = this.racontes[0];
-    this.secondRecente =this.racontes.slice(1);
+    this.racontes$ = this.raconteService
+      .getAllRaconte()
+      .pipe(map((value) => value.slice(-4)));
+    this.firstRecente$ = this.racontes$.pipe(map((recente) => recente[0]));
+    this.secondRecente$ = this.racontes$.pipe(map((value) => value.slice(1)));
     
   }
 

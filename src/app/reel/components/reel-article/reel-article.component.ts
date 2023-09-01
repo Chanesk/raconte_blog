@@ -15,6 +15,6 @@ export class ReelArticleComponent {
 
   icon = faArrowUpRightFromSquare;
   onViewRaconte() {
-    this.router.navigateByUrl(`reel/${this.raconte.id}`);
+    this.router.navigateByUrl(`reel/${this.raconte._id}`);
   }
 }

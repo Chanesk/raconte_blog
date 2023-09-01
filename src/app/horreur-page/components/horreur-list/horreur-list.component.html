@@ -4,6 +4,6 @@
         <app-subscribe></app-subscribe>
     </section>
     <section class="horreur__article">
-        <app-horreur-article *ngFor="let raconte of racontes" [raconte]="raconte"></app-horreur-article>
+        <app-horreur-article *ngFor="let raconte of racontes$ | async" [raconte]="raconte"></app-horreur-article>
     </section>
 </div>

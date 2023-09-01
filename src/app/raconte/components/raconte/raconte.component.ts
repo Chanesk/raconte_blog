@@ -15,6 +15,6 @@ export class RaconteComponent {
 
   icon = faArrowUpRightFromSquare;
   onViewRaconte() {
-    this.router.navigateByUrl(`raconte/${this.raconte.id}`);
+    this.router.navigateByUrl(`raconte/${this.raconte._id}`);
   }
 }

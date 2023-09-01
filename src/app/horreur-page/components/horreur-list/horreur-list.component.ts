@@ -10,10 +10,10 @@ import { raconteService } from 'src/app/core/service/racontes.service';
   styleUrls: ['./horreur-list.component.scss']
 })
 export class HorreurListComponent implements OnInit{
-  racontes!: Raconte[];
+  racontes$!:Observable<Raconte[]>;
   constructor(private RaconteService: raconteService){}
 
   ngOnInit(): void {
-    this.racontes= this.RaconteService.getAllRaconte();
+    this.racontes$= this.RaconteService.getAllRaconte();
   }
 }

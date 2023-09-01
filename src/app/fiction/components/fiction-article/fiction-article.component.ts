@@ -15,6 +15,6 @@ export class FictionArticleComponent {
 
   icon = faArrowUpRightFromSquare;
   onViewRaconte() {
-    this.router.navigateByUrl(`fiction/${this.raconte.id}`);
+    this.router.navigateByUrl(`fiction/${this.raconte._id}`);
   }
 }
