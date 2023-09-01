@@ -1,8 +1,8 @@
 <div class="recente">
     <div class="recente__first">
-        <app-raconte-recente  *ngIf="firstRecente as raconte" [raconte]="raconte"></app-raconte-recente>
+        <app-raconte-recente  *ngIf="firstRecente$ | async as raconte" [raconte]="raconte"></app-raconte-recente>
     </div>
     <div class="recente__second">
-        <app-raconte-third-recente *ngFor="let raconte of secondRecente " [raconte]="raconte"></app-raconte-third-recente>
+        <app-raconte-third-recente *ngFor="let raconte of secondRecente$ | async " [raconte]="raconte"></app-raconte-third-recente>
     </div>
 </div>

@@ -7,7 +7,7 @@ import { Itoken } from '../model/Itoken.model';
   providedIn: 'root',
 })
 export class UserService {
-  url = 'http://localhost:1337/api/auth/local/register';
+  url = 'https://confused-duck-singlet.cyclic.app/api/auth/signup';
 
   constructor(private http: HttpClient) {}
   signin(credentials: any): Observable<Itoken> {

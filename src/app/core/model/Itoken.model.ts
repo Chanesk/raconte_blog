@@ -1,3 +1,3 @@
 export class Itoken {
-  jwt!: string;
+  token!: string;
 }

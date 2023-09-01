@@ -8,10 +8,6 @@
             <form class="connect__content__form" [formGroup]="raconteForm">
                 <h3>Bienvenue</h3>
                 <div class="connect__content__box">
-                    <input type="text" placeholder="Entrez votre nom" formControlName="username">
-                </div>
-                <span *ngIf="raconteForm.controls['username'].invalid && raconteForm.controls['username'].touched">Veuillez entrez un nom qui contient au moins 3 caractères</span>                
-                <div class="connect__content__box">
                     <input type="email" placeholder="Entrez votre email" formControlName="email">
                 </div>
                 <span *ngIf="raconteForm.controls['email'].invalid && raconteForm.controls['email'].touched">Veuillez entrez une adresse valide</span>

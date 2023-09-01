@@ -26,8 +26,7 @@ export class SeconnecterComponent implements OnInit {
     this.emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     this.raconteForm = this.formBuilder.group({
-      username: [null, [Validators.required, Validators.minLength(3)]],
-      email: [null, [Validators.pattern(this.emailRegex)]],
+      email: [null, [Validators.required, Validators.pattern(this.emailRegex)]],
       password: [
         null,
         [Validators.required, Validators.pattern(this.passwordRegex)],
@@ -35,7 +34,9 @@ export class SeconnecterComponent implements OnInit {
     });
   }
   onSubmitUser(): void {
-    this.tokenService.saveToken("token"),
+    this.userService.signin(this.raconteForm.value).subscribe(
+      data => this.tokenService.saveToken(data.token)
+    )
     this.router.navigateByUrl('');
   }
 }

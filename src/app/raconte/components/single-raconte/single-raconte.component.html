@@ -1,4 +1,4 @@
-<div *ngIf="racontes as raconte" class="single">
+<div *ngIf="racontes$ | async as raconte" class="single">
     <div class="single__page">
         <div class="single__info">
             <p>Histoires reserver aux membres</p>
