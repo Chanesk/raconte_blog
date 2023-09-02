@@ -2,7 +2,6 @@ import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { Raconte } from 'src/app/core/model/raconte.model';
-import { raconteService } from 'src/app/core/service/racontes.service';
 
 @Component({
   selector: 'app-raconte',
@@ -11,7 +10,7 @@ import { raconteService } from 'src/app/core/service/racontes.service';
 })
 export class RaconteComponent {
   @Input() raconte!: Raconte;
-  constructor( private router: Router) {}
+  constructor(private router: Router) {}
 
   icon = faArrowUpRightFromSquare;
   onViewRaconte() {

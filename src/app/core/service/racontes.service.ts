@@ -1,25 +1,25 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Raconte } from '../model/raconte.model';
 import { Observable, map } from 'rxjs';
-import { __values } from 'tslib';
-
+import { environment } from '../../../environments/environment';
 @Injectable({
   providedIn: 'root',
 })
 export class raconteService {
-
+  apiUrl= environment.apiUrl
   constructor(private http: HttpClient){}
   getAllRaconte(): Observable<any> {
     return this.http
-      .get<any>('https://confused-duck-singlet.cyclic.app/api/raconte')
+      .get<any>(`${this.apiUrl}/raconte`)
       .pipe(map((value) => value));
   }
   getRaconteById(raconteId: number): Observable<any> {
     return this.http
       .get<any>(
-        `https://confused-duck-singlet.cyclic.app/api/raconte/${raconteId}`
+        `${this.apiUrl}/raconte/${raconteId}`
       )
       .pipe(map((value) => value));
   }
+  
+  
 }

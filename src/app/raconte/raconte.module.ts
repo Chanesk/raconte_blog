@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RaconteComponent } from './components/raconte/raconte.component';
 import { SubscribeComponent } from './components/subscribe/subscribe.component';
-import { RaconteListComponent } from './components/raconte-list/raconte-list.component';
 import { FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import { RaconteRecenteComponent } from './components/raconte-recente/raconte-recente.component';
 import { RaconteRecenteListComponent } from './components/raconte-recente-list/raconte-recente-list.component';
@@ -16,9 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    RaconteComponent,
     SubscribeComponent,
-    RaconteListComponent,
     RaconteRecenteComponent,
     RaconteRecenteListComponent,
     RaconteThirdRecenteComponent,
@@ -33,7 +29,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule
   ], 
   exports:[
-    RaconteListComponent,
     SubscribeComponent,
     RaconteRecenteListComponent
   ]
