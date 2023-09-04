@@ -5,6 +5,10 @@
   height: 90%;
   background-color: rgba(255, 255, 255);
   z-index: 9999;
+  @include breakpoint(mobil){
+    // margin-top: 20px;
+    height: 92%;
+  }
 }
 
 .cssload-speeding-wheel {
