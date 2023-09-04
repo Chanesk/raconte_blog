@@ -22,7 +22,7 @@ export class SeconnecterComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!/]).*$/;
+    this.passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=?-_*µ|!/]).*$/;
     this.emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     this.raconteForm = this.formBuilder.group({
@@ -35,8 +35,11 @@ export class SeconnecterComponent implements OnInit {
   }
   onSubmitUser(): void {
     this.userService.signin(this.raconteForm.value).subscribe(
-      data => this.tokenService.saveToken(data.token)
-    )
-    this.router.navigateByUrl('');
+      data => {
+        this.tokenService.saveToken(data.token);
+        window.location.reload()
+      }
+      )
+      this.router.navigateByUrl('')
   }
 }

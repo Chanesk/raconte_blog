@@ -4,7 +4,7 @@
             <p>Histoires reserver aux membres</p>
             <div class="single__info__user">
                 <div class="single__info__user__img">
-                    <img [src]="raconte.user.imgUrl" alt="">
+                    <img [src]="raconte.user.imgUrl" alt="" loading="lazy">
                 </div>
                 <div class="single__info__user__text">
                     <p>{{raconte.user.name}}</p>
@@ -14,7 +14,7 @@
         </div>
         <div class="single__raconte">
             <h1>{{raconte.title}}</h1>
-            <div class="single__raconte__img"><img [src]="raconte.image" alt="raconte.title"></div>
+            <div class="single__raconte__img"><img [src]="raconte.image" alt="raconte.title" loading="lazy"></div>
             <p>{{raconte.content}}</p>
         </div>
 
