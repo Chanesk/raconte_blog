@@ -23,6 +23,8 @@ export class HeaderComponent implements OnInit {
       map(()=> this.router.url)
     );
     this.token=this.tokenService.getToken();
+    console.log(this.token);
+    
   }
   toggleDisplayNav() {
     this.isShowNav = !this.isShowNav;

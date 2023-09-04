@@ -1,6 +1,6 @@
 <div class="article" (click)="onViewRaconte()">
     <div class="article__img">
-        <img [src]="raconte.image" alt="">
+        <img [src]="raconte.image" alt="" loading="lazy">
     </div>
     <p class="article__info">{{raconte.user.name}} - {{raconte.createdDate | date: 'd MMMM yyyy'}}</p>
     <div class="article__content">

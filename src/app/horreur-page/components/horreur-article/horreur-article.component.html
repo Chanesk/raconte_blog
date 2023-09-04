@@ -1,6 +1,6 @@
 <div class="article" *ngIf="raconte.category.name === 'horreur'" (click)="onViewRaconte()">
     <div class="article__img">
-        <img [src]="raconte.image" alt="raconte.attributes.title">
+        <img [src]="raconte.image" alt="raconte.attributes.title" loading="lazy">
     </div>
     <p class="article__info">{{raconte.user.name}} - {{raconte.createdDate | date: 'd MMMM yyyy'}}</p>
     <div class="article__content">
