@@ -9,6 +9,7 @@ import { LazyImgDirectiveDirective } from './lazy-img-directive.directive';
 import { SpinnerComponent } from './spinner/spinner/spinner.component';
 import { LoaderService } from './core/service/loader.service';
 import { LoaderInterceptor } from './interceptors/loader.interceptor';
+import { DecouvrirModule } from './decouvrir/decouvrir.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LoaderInterceptor } from './interceptors/loader.interceptor';
     AppRoutingModule,
     CoreModule,
     LandingPageModule,
-    HttpClientModule
+    HttpClientModule,
+    DecouvrirModule
   ],
   providers: [
     {
