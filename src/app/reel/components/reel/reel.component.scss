@@ -9,11 +9,12 @@
     }
     &__article{
         display: flex;
-        gap: 22px;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
         margin: 100px 0px;
+        width: 100%;
+        gap: 40px !important;
         @include breakpoint(tablette){
             gap: 40px;
             margin: 40px 0px 60px 0px;

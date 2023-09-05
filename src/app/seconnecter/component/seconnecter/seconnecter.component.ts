@@ -22,7 +22,7 @@ export class SeconnecterComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=?-_*µ|!/]).*$/;
+    this.passwordRegex =/^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_\-+={}[\]|\\:;"'<>,.?/])[\w!@#$%^&*()_\-+={}[\]|\\:;"'µ£§<>,.?/]{8,}$/
     this.emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     this.raconteForm = this.formBuilder.group({
