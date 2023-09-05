@@ -2,8 +2,8 @@
     <section class="reel__heading">
         <h1>Découvrez des récits inspirés de faits réels</h1>
         <app-subscribe></app-subscribe>
-    </section>
+    </section >
     <section class="reel__article">
-        <app-reel-article *ngFor="let raconte of racontes$ | async" [raconte]="raconte"></app-reel-article>
+        <app-reel-article  *ngFor="let raconte of racontes$ | async" [raconte]="raconte"></app-reel-article>
     </section>
 </div>

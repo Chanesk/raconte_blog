@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, filter, map } from 'rxjs';
 import { Raconte } from 'src/app/core/model/raconte.model';
 import { raconteService } from 'src/app/core/service/racontes.service';
 
@@ -13,7 +13,11 @@ export class ReelComponent implements OnInit{
   constructor(private RaconteService: raconteService){}
 
   ngOnInit(): void {
-    this.racontes$=this.RaconteService.getAllRaconte()
+    this.racontes$ = this.RaconteService.getAllRaconte().pipe(
+      map((racontes) =>
+        racontes.filter((raconte:Raconte) => raconte.category.name === 'fait réel')
+      )
+    );
   }
 
 }
